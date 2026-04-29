@@ -1,0 +1,10 @@
+<div class="form-page">
+    <div class="form-header">
+        <h2 class="form-header__title">Formularz kredytowy</h2>
+    </div>
+    <form [formGroup]="form" class="form-content">
+        <div class="form-content__actions">
+            <p-button type="submit" label="Wyślij" (click)="onSubmit()"></p-button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,41 @@
+.form-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4ff 0%, #faf5ff 50%, #f0fdf4 100%);
+  padding: 2rem 1.5rem 4rem;
+  font-family: inherit;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e1b4b;
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    color: #6b7280;
+    margin: 0;
+  }
+}
+
+.form-content {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  > * {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}

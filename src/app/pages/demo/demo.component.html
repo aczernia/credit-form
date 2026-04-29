@@ -1,0 +1,92 @@
+<div class="demo-page">
+  <header class="demo-header">
+    <h1 class="demo-header__title">PrimeNG — Przykłady komponentów</h1>
+    <p class="demo-header__subtitle">
+      Showcase podstawowych komponentów formularza dostępnych w PrimeNG
+    </p>
+  </header>
+
+  <div class="cards-grid">
+
+    <!-- ── Input Text ─────────────────────────────────── -->
+    <article class="card">
+      <div class="card__badge card__badge--blue">
+        <i class="pi pi-pencil"></i>
+      </div>
+      <h2 class="card__title">Input Text</h2>
+      <p class="card__description">
+        Pole tekstowe do wpisywania dowolnych danych.
+      </p>
+      <div class="card__body">
+        <label for="textInput" class="field-label">Imię i nazwisko</label>
+        <input
+          pInputText
+          id="textInput"
+          [formControl]="form.controls.name"
+          placeholder="np. Jan Kowalski"
+        />
+        @if (form.controls.name.value) {
+          <p class="preview">
+            Wpisano: <strong>{{ form.controls.name.value }}</strong>
+          </p>
+        }
+      </div>
+    </article>
+
+    <!-- ── Select ─────────────────────────────────────── -->
+    <article class="card">
+      <div class="card__badge card__badge--purple">
+        <i class="pi pi-list"></i>
+      </div>
+      <h2 class="card__title">Select</h2>
+      <p class="card__description">
+        Rozwijana lista z predefiniowanymi opcjami do wyboru.
+      </p>
+      <div class="card__body">
+        <label for="selectInput" class="field-label">Miasto</label>
+        <p-select
+          inputId="selectInput"
+          [formControl]="form.controls.city"
+          [options]="options"
+          optionLabel="label"
+          optionValue="value"
+          placeholder="Wybierz miasto..."
+          styleClass="full-width"
+        />
+        @if (form.controls.city.value) {
+          <p class="preview">
+            Wybrano: <strong>{{ form.controls.city.value }}</strong>
+          </p>
+        }
+      </div>
+    </article>
+
+    <!-- ── DatePicker ─────────────────────────────────── -->
+    <article class="card">
+      <div class="card__badge card__badge--green">
+        <i class="pi pi-calendar"></i>
+      </div>
+      <h2 class="card__title">DatePicker</h2>
+      <p class="card__description">
+        Interaktywny selektor daty z widokiem kalendarza.
+      </p>
+      <div class="card__body">
+        <label for="dateInput" class="field-label">Data urodzenia</label>
+        <p-datepicker
+          inputId="dateInput"
+          [formControl]="form.controls.birthDate"
+          dateFormat="dd.mm.yy"
+          placeholder="DD.MM.RRRR"
+          [showIcon]="true"
+          styleClass="full-width"
+        />
+        @if (form.controls.birthDate.value) {
+          <p class="preview">
+            Wybrano: <strong>{{ form.controls.birthDate.value | date: 'dd.MM.yyyy' }}</strong>
+          </p>
+        }
+      </div>
+    </article>
+
+  </div>
+</div>
